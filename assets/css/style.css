@@ -1,0 +1,244 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #b99878;
+    font-family: "Playpen Sans", cursive;
+}
+
+::selection {
+    color: #ffffff;
+    background-color: #B99470;
+}
+
+.container {
+    max-width: 405px;
+    background-color: #C0C78C;
+    margin: 140px auto;
+    padding: 30px 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(192, 199, 140, 0.5)
+}
+
+.taskInput {
+    height: 50px;
+    padding:  0 25px;
+    position: relative;
+}
+
+.taskInput i {
+    background-color: #A6B37D;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.taskInput input {
+    width: 90%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 2px 20px 2px 5px;
+    border: 1px solid #999999
+}
+
+.taskInput input:focus, .taskInput input.active {
+    border: 2px solid #b99878;
+}
+
+.taskInput input::placeholder {
+    color: #C0C78C;
+}
+
+.taskControls, li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskControls {
+    padding: 20px 25px;
+    border-bottom: 1px solid #A6B37D;
+}
+
+.filters span {
+    margin: 0 10px;
+    font-size: 17px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.fitlers span:first-child {
+    margin-left: 0;
+}
+
+.filters span.active {
+    color: #1e293b;
+}
+
+.taskControls .clearAllButton {
+    border: none;
+    opacity: 0.5;
+    outline: none;
+    color: #1e293b;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #A6B37D;
+}
+
+.clearAllButton:hover {
+    opacity: 0.9;
+    pointer-events: auto;
+    transform: scale(1.1);
+}
+
+.taskList {
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 20px 10px 25px;
+}
+
+.taskList.overflow {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.taskList::-webkit-scrollbar {
+    width: 5px;
+}
+
+.taskList::-webkit-scrollbar-track{
+    background: #C0C78C;
+    border-radius: 25px;    
+}
+
+.taskList::-webkit-scrollbar-thumb{
+    background: #b1b881;
+    border-radius: 25px;    
+}
+
+.taskList .task {
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    align-items: flex-start;
+    border-bottom: 1px solid #C0C78C;
+}
+
+.taskList .task:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.taskList .task label {
+    display: flex;
+    align-items: flex-start;
+}
+
+.taskList label input {
+    margin-top: 5px;
+    accent-color: #1e293b;
+}
+
+.taskList label p {
+    user-select: none;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+.task label p.checked {
+    text-decoration: line-through;
+}
+
+.taskList .settings {
+    position: relative;
+}
+
+.settings :where(i, li) {
+    cursor: pointer;
+}
+
+.settings .taskMenu {
+    z-index: 10;
+    right: -5px;
+    bottom: -65px;
+    padding: 5px 0;
+    background: #fff;
+    position: absolute;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: top right;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.taskList .task:last-child .taskMenu {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.taskList .task:first-child .taskMenu {
+    bottom: -65px;
+    transform-origin: top right;
+}
+
+.taskMenu.show {
+    transform: scale(1);
+}
+
+.taskMenu li {
+    height: 25px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    padding: 17px 15px;
+    cursor: pointer;
+    justify-content: flex-start;
+}
+
+.taskMenu li:last-child {
+    margin-bottom: 0;
+}
+
+.settings li:hover {
+    background: #f5f5f5;
+}
+
+.settings li i {
+    padding-right: 8px;
+}
+
+@media (max-width: 400px){
+    body {
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 20px 0;
+    }
+
+    .filters span {
+        margin: 0 5px;
+    }
+
+    .taskInput {
+        padding: 0 20px;
+    }
+
+    .taskControls {
+        padding: 18px 20px;
+    }
+
+    .taskList {
+        margin-top: 20px;
+        margin-right: 5px;
+        padding: 0 15px 10px 20px;
+    }
+
+    .task label input{
+        margin-top: 4px;
+    }
+
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/icons/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>To Do App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="taskInput">
+            <i class="bi bi-card-checklist"></i>
+            <input type="text" placeholder="Play Elden Ring">
+        </div>
+
+        <div class="taskControls">
+            <div class="filters">
+                <span id="all" class="active">
+                    All
+                </span>
+                <span id="pending">
+                    Pending
+                </span>
+                <span id="completed">
+                    Completed
+                </span>
+            </div>
+            <button class="clearAllButton">
+                <i class="bi bi-x-circle"></i>
+            </button>
+        </div>
+
+        <ul class="taskList"></ul>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
